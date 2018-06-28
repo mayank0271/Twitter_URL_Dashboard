@@ -10,12 +10,19 @@ URLs shared by their friends and followings at one place.
 # Procedure to be followed to run this app.
 
 -> Download the files from my repository and unzip it.
+
 -> For running the php script and database switch on to xampp server and start Apache and MySQl in it.
+
 -> For making my localhost global i have used a software named ngrok (using command :-  ngrok http 80).
+
 -> Now copy the entire include folder and index.php file inside the htdocs of your computer.
+
 -> After this switch on to crome and write the url that is generated during ngrok execution.
+
 -> Move to android studio and open the android file provided. 
+
 -> Inside the android project thier is a class named BackgroundTasks in that their is a variable url (paste the ngrok url til the index.php).
+
 -> Then run the application to your mobile or emulator having internet connection enabled.
 
 
