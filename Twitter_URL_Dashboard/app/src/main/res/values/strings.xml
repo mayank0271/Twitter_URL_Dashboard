@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Twitter_URL_Dashboard</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">SyG1u65zIKBtljkxnSnuM0NpF</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">dR5VMvCCA81p6zsge8yLWSryy4KjdkOYI9fh0INxR39iZ1iv55</string>
+</resources>
