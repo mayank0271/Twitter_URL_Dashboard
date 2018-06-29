@@ -23,7 +23,7 @@ URLs shared by their friends and followings at one place.
 
 -> Inside the android project thier is a class named BackgroundTasks in that their is a variable url (paste the ngrok url til the index.php).
 
--> Then run the application to your mobile or emulator having internet connection enabled.
+-> Then run the application in your mobile or emulator having internet connection enabled.
 
 
 
@@ -46,6 +46,26 @@ I have already providedin the include folder.
 After accessing their home timeline I am treaming the text field to get only the url which their friends twitted and saving into the database.
 
 Note: Here I have used local database to store the data. The fields that the database contains are followers userid,urls they shared,your userid and timestamp.
+
+Now coming to android. In android I have created 3 activities they are :- MainActivity, LoginActivity and HomeActivity.
+
+-> MainActivity is just for showing the splash screen and taking the user to login activity. 
+
+-> In login activity using TwitterLoginButton and user session I am authenticating the user and if the user has a twitter 
+app then he will just need to press authenticate and if the user dont have twiiter app in his mobile then the user will be
+re directed to a webview asking for the twitter credentials for login in.
+
+-> The HomeActivity is for displaying the details fetched from users home timeline like friends userid, Timestamp of the tweet
+and the urls shared.
+
+For fetching the details of user's home timeline I have created three classes they are :- 
+BackgroundTask which is extending Asynchronous Tasks and running in background wherein I have created a json to send the 
+loggedin users userid and tokens fetched from session and then passing these all with post to php code 
+Now in PostExecute method I am fetching the json returned from the execution of the php and saving in a ArrayList of classtype
+MyDataObject which contains the Class variables like timestamp, userid and arraylist of type string containing the urls.
+
+Now In the main adapter class I am filling the details of the user home timeline in the card view using recycler view for displaying in the homeactivity.
+
 
 
 
