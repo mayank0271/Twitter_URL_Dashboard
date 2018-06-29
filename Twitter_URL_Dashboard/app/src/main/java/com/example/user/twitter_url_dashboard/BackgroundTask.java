@@ -25,7 +25,7 @@ public class BackgroundTask extends AsyncTask<Void, Void, String> {
     private String JSONString=null;
     @Override
     protected String doInBackground (Void...strings){
-        String url = "http://28108843.ngrok.io/simple/index.php";
+        String url = "http://a367d47f.ngrok.io/simple/index.php";
         OauthResult oauthResult = new OauthResult();
 
         try {
@@ -88,7 +88,7 @@ public class BackgroundTask extends AsyncTask<Void, Void, String> {
 
             JSONObject jsonObject, jsonPart;
             JSONArray inner;
-            String pboarded = null, pleft = null, bus_id = null;
+            String timestamp = null, userid = null, urls = null;
             try {
                 jsonObject = new JSONObject(result);
                 JSONArray arr = jsonObject.getJSONArray("testData");
@@ -96,13 +96,13 @@ public class BackgroundTask extends AsyncTask<Void, Void, String> {
                     inner = arr.getJSONArray(i);
 
                     int j = 0;
-                    pboarded = inner.getString(j);
-                    pleft = inner.getString((j + 1));
-                    bus_id = inner.getString(j + 3);
+                    timestamp = inner.getString(j);
+                    userid = inner.getString((j + 1));
+                    urls = inner.getString(j + 3);
 
-                    String []splitterString=bus_id.split("\"");
+                    String []splitterString=urls.split("\"");
                     ArrayList<String> array = new ArrayList<String>();
-                    bus_id = "";
+                    urls = "";
 
                     for (String a : splitterString){
                         if(a.contains("https:")){
@@ -112,11 +112,11 @@ public class BackgroundTask extends AsyncTask<Void, Void, String> {
                     }
 
 
-                   arrayList.add(new MyUserData(pboarded,pleft,array));
+                   arrayList.add(new MyUserData(timestamp,userid,array));
 
 
 
-                    // Log.i("Message",pboarded+"   "+pleft+"   "+bus_id+"\n");
+                    
 
 
                 }

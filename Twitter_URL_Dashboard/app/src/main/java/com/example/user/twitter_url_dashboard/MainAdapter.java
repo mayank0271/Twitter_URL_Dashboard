@@ -2,6 +2,7 @@ package com.example.user.twitter_url_dashboard;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +30,17 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         if(position<mlatlnglist.size()) {
             holder.uid.setText(mlatlnglist.get(position).getUsername());
             holder.time.setText(mlatlnglist.get(position).getTime());
-            holder.url.setText((mlatlnglist.get(position).getUrls().toString().replace("[", "").replace("]", "")));
+            holder.url.setText((mlatlnglist.get(position).getUrls().toString().replace("[", "").replace(","," ").replace("]", "")));
+
+            String []splitterString=(mlatlnglist.get(position).getUrls().toString().replace("[", "").replace(","," ").replace("]", "")).split(" ");
+            for (String a : splitterString){
+                if(a.contains("https:")){
 
 
+                    Linkify.addLinks(holder.url,Linkify.WEB_URLS);
+
+                }
+            }
 
            /*
             final MyUserData str = mlatlnglist.get(position+2);

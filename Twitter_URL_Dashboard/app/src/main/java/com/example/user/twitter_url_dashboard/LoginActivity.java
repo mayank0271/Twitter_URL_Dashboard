@@ -1,7 +1,9 @@
 package com.example.user.twitter_url_dashboard;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -25,6 +27,10 @@ public class LoginActivity extends AppCompatActivity {
     public static String token;
     public static String secret;
     public static String  userID;
+    private ProgressDialog progressBar;
+    private int progressBarStatus = 0;
+    private Handler progressBarbHandler = new Handler();
+    private long fileSize = 0;
 
 
     public static ArrayList<MyUserData> latlnglist;
@@ -112,5 +118,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+
+
+
 }
 
