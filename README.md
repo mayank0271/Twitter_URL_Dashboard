@@ -1,7 +1,7 @@
 # Twitter_URL_Dashboard
 
-This application is to facilitate the user who miss 
-there important URLs from their twitter Home Timeline due to their 
+This application is to facilitate the user who misses 
+their important URLs from their twitter Home Timeline due to their 
 busy schedules,
 So, this app provides a dashboard to get all the 
 URLs shared by their friends and followings at one place.
